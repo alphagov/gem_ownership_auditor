@@ -1,0 +1,14 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    multi_json (1.10.1)
+    netrc (0.7.7)
+    rest_client (1.7.3)
+      netrc (~> 0.7.7)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  multi_json
+  rest_client
