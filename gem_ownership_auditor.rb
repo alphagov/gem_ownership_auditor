@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require 'rest_client'
 require 'pp'
 require 'multi_json'
@@ -38,6 +39,14 @@ class GemOwnershipAuditor
       log "#{owner}:"
       log "  #{gems.sort.join(", ")}"
     end
+
+    log ""
+    log "If you see a user who should no longer have access to publish a gem"
+    log "you can issue the following command:"
+    log ""
+    log "$ gem owner --remove email@example.com gemname"
+    log ""
+    log "to do this, you will need to be an owner of the gem yourself, of course!"
   end
 
   def list_gems(owner)
