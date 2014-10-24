@@ -67,7 +67,12 @@ class GemOwnershipAuditor
 private
   def fetch_json(api_path)
     url = "https://rubygems.org/api/v1/" + api_path
-    response = RestClient.get(url, {accept: :json})
+    response = RestClient::Request.execute(
+      method: :GET,
+      url: url,
+      headers: {accept: :json},
+      ssl_version: :TLSv1_2,
+    )
     MultiJson.load(response)
   end
 end
